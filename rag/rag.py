@@ -11,7 +11,7 @@ import socket
 
 # Load the model and tokenizer locally
 print("Loading local model")
-model_directory = "./embeddingModels/all-MiniLM-l6-v2"
+model_directory = "./embeddingModels/models/all-MiniLM-l6-v2"
 tokenizer = AutoTokenizer.from_pretrained(model_directory)
 model = AutoModel.from_pretrained(model_directory)
 

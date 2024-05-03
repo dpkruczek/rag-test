@@ -5,7 +5,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModel.from_pretrained(model_name)
 
 # Specify your save directory
-save_directory = "./"
+save_directory = f"./models/{model_name}"
 
 # Save the model and the tokenizer
 model.save_pretrained(save_directory)
