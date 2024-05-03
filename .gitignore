@@ -1,0 +1,9 @@
+
+.env
+.idea
+__pycache__/settings.cpython-312.pyc
+frontend/node_modules
+frontend/public/build
+rag/__pycache__/util.cpython-312.pyc
+rag/embeddingModels/models/*
+rag/corpus/employees.csv
