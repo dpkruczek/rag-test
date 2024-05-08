@@ -1,6 +1,8 @@
 from langchain_openai import ChatOpenAI
 from langchain_experimental.agents.agent_toolkits.csv.base import create_csv_agent
+from datetime import datetime
 from settings import OPENAI_API_KEY
+
 # import pandas as pd
 
 # df = pd.read_csv('./corpus/employees.csv', sep=';', encoding='latin-1')
@@ -15,7 +17,8 @@ agent = create_csv_agent(
     pandas_kwargs={"encoding": "latin-1", "sep": ";"},
     verbose=True)
 
-agent.run("What is the attrition rate for the last few years? The current date is 2024 May 06. You can assume that "
-          "for any given date, if the date you are looking at is between the startDate and lastEmploymentDate, "
-          "then that person is employed. If an employee does not have a lastEmploymentDate, the person is still "
-          "employed")
+assumptions = (f"The current date is {str(datetime.now())}. You can assume that for any given date, if the date you are "
+               f"looking at is between the startDate and lastEmploymentDate, then that person is employed. If an "
+               f"employee does not have a lastEmploymentDate, the person is still employed")
+
+agent.run("What is the attrition rate for the last few years? " + assumptions)
