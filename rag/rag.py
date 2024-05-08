@@ -32,7 +32,7 @@ vectorstore = Chroma.from_documents(documents=all_splits, embedding=custom_embed
 # Connect to local llm. The llm should already be running using Ollama
 print("Connect to local llm")
 llm = Ollama(
-    model="llama2", callback_manager=CallbackManager([StreamingStdOutCallbackHandler()])
+    model="llama3", callback_manager=CallbackManager([StreamingStdOutCallbackHandler()])
 )
 instructions = ("You are a large language model that gets asked questions about building rules. You will receive "
                 "relevant excerpts from the swedish building rule handbook. The question and instructions are in "
